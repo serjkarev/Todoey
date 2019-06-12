@@ -17,7 +17,7 @@ class ToDoListViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print(FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!)
+        //print(FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!)
         
         let newItem = Item()
         newItem.title = "123"
