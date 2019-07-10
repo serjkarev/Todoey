@@ -17,23 +17,8 @@ class ToDoListViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //print(FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!)
-        
-        let newItem = Item()
-        newItem.title = "123"
-        itemArray.append(newItem)
-        
-        let newItem2 = Item()
-        newItem2.title = "456"
-        itemArray.append(newItem2)
-        
-        let newItem3 = Item()
-        newItem3.title = "789"
-        itemArray.append(newItem3)
-        
-//        if let items = defaults.array(forKey: "TodoListArray") as? [Item]{
-//             itemArray = items
-//        }
+        //print(dataFilePath)
+        loadItems()
         
     }
     
@@ -47,7 +32,7 @@ class ToDoListViewController: UITableViewController {
  
         return cell
     }
-    // just test the git on laptop
+
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return itemArray.count
     }
@@ -92,6 +77,17 @@ class ToDoListViewController: UITableViewController {
         }
         
         self.tableView.reloadData()
+    }
+    
+    func loadItems(){
+        if let data = try? Data(contentsOf: dataFilePath!){
+            let decoder = PropertyListDecoder()
+            do {
+                itemArray = try decoder.decode([Item].self, from: data)
+            }catch{
+                print("Error decoding item array \(error)")
+            }
+        }
     }
     
 }
