@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		52177F9922D6166F0086A33E /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 52177F9722D6166F0086A33E /* DataModel.xcdatamodeld */; };
+		52B2054C22F08747005E3F09 /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B2054B22F08747005E3F09 /* CategoryViewController.swift */; };
 		B1ABA53222ABCEAF005E6C09 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1ABA53122ABCEAF005E6C09 /* AppDelegate.swift */; };
 		B1ABA53422ABCEAF005E6C09 /* ToDoListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1ABA53322ABCEAF005E6C09 /* ToDoListViewController.swift */; };
 		B1ABA53722ABCEAF005E6C09 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B1ABA53522ABCEAF005E6C09 /* Main.storyboard */; };
@@ -17,6 +18,7 @@
 
 /* Begin PBXFileReference section */
 		52177F9822D6166F0086A33E /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
+		52B2054B22F08747005E3F09 /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
 		B1ABA52E22ABCEAF005E6C09 /* Todoey.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Todoey.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1ABA53122ABCEAF005E6C09 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B1ABA53322ABCEAF005E6C09 /* ToDoListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoListViewController.swift; sourceTree = "<group>"; };
@@ -48,6 +50,7 @@
 		B147720522AFEEBF0034882F /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				52B2054B22F08747005E3F09 /* CategoryViewController.swift */,
 				B1ABA53322ABCEAF005E6C09 /* ToDoListViewController.swift */,
 			);
 			path = Controllers;
@@ -172,6 +175,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52B2054C22F08747005E3F09 /* CategoryViewController.swift in Sources */,
 				52177F9922D6166F0086A33E /* DataModel.xcdatamodeld in Sources */,
 				B1ABA53422ABCEAF005E6C09 /* ToDoListViewController.swift in Sources */,
 				B1ABA53222ABCEAF005E6C09 /* AppDelegate.swift in Sources */,
