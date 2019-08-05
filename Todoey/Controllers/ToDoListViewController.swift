@@ -9,7 +9,7 @@
 import UIKit
 import RealmSwift
 
-class ToDoListViewController: UITableViewController {
+class ToDoListViewController: SwipeTableViewController {
 
     var todoItems: Results<Item>?
     
@@ -22,14 +22,14 @@ class ToDoListViewController: UITableViewController {
     }
     
     override func viewDidLoad() {
-        super.viewDidLoad()  
+        super.viewDidLoad()
     }
     
     //MARK: - Table View Datasource Methods
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ToDoItemCell", for: indexPath)
+        let cell = super.tableView(tableView, cellForRowAt: indexPath)
         if let item = todoItems?[indexPath.row] {
             cell.textLabel?.text = item.title
             cell.accessoryType = item.done ? .checkmark : .none
@@ -60,6 +60,19 @@ class ToDoListViewController: UITableViewController {
         tableView.reloadData()
 
         tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
+    override func updateModel(at indexPath: IndexPath) {
+        
+        if let itemForDelition = todoItems?[indexPath.row]{
+            do{
+                try realm.write {
+                    realm.delete(itemForDelition)
+                }
+            }catch{
+                print("Error delete item \(error)")
+            }
+        }
     }
     
     //MARK: - Add New Items
